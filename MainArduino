@@ -1,0 +1,103 @@
+char incomingByte;  // входящие данные
+int  LED_1 = 2;      // LED подключен к 12 пину
+int LED_2 = 3;
+int LED_3 = 4;
+int LED_4 = 5;
+int LED_5 = 6;
+int LED_6 = 7;
+int LED_7 = 8;
+ 
+void setup() {
+  Serial.begin(9600); // инициализация порта
+  pinMode(LED_1, OUTPUT); //Устанавливаем 12 вывод как выход
+  pinMode(LED_2, OUTPUT);
+  pinMode(LED_3, OUTPUT);
+  pinMode(LED_4, OUTPUT);
+  pinMode(LED_5, OUTPUT);
+  pinMode(LED_6, OUTPUT);
+  pinMode(LED_7, OUTPUT);
+  Serial.println("Press 1 to LED ON or 0 to LED OFF...");
+}
+ 
+void loop() {
+  if (Serial.available() > 0) {  //если пришли данные
+    incomingByte = Serial.read(); // считываем байт
+    if(incomingByte == '0') 
+    {
+       digitalWrite(LED_1, LOW);  // если 1, то выключаем LED
+       Serial.println("LED OFF. Press 1 to LED ON!");  // и выводим обратно сообщение
+    }
+    if(incomingByte == '1') {
+       digitalWrite(LED_1, HIGH); // если 0, то включаем LED
+       Serial.println("LED ON. Press 0 to LED OFF!");
+    }
+    if(incomingByte == '3'){
+      digitalWrite(LED_2, LOW);
+      Serial.println("LED OFF.");
+    }
+    if(incomingByte == '2'){
+      digitalWrite(LED_2, HIGH);
+      Serial.println("LED ON");
+    }
+    if(incomingByte == '5'){
+      digitalWrite(LED_3, LOW);
+      Serial.println("LED OFF.");
+    }
+    if(incomingByte == '4'){
+      digitalWrite(LED_3, HIGH);
+      Serial.println("LED ON");
+    }
+    if(incomingByte == '6'){
+      digitalWrite(LED_4, HIGH);
+      Serial.println("LED ON");
+    }
+    if(incomingByte == '7'){
+      digitalWrite(LED_4, LOW);
+      Serial.println("LED OFF");
+    }
+      if(incomingByte == '8'){
+      digitalWrite(LED_5, HIGH);
+      Serial.println("LED ON");
+    }
+    if(incomingByte == '9'){
+      digitalWrite(LED_5, LOW);
+      Serial.println("LED OFF");
+    }
+      if(incomingByte == 'a'){
+      digitalWrite(LED_6, HIGH);
+      Serial.println("LED ON");
+    }
+    if(incomingByte == 'b'){
+      digitalWrite(LED_6, LOW);
+      Serial.println("LED OFF");
+    }
+      if(incomingByte == 'e'){
+      digitalWrite(LED_7, HIGH);
+      Serial.println("LED ON");
+    }
+    if(incomingByte == 'f'){
+      digitalWrite(LED_7, LOW);
+      Serial.println("LED OFF");
+    }
+    if(incomingByte == 'c'){
+      digitalWrite(LED_1, HIGH);
+      digitalWrite(LED_2, HIGH);
+      digitalWrite(LED_3, HIGH);
+      digitalWrite(LED_4, HIGH);
+      digitalWrite(LED_5, HIGH);
+      digitalWrite(LED_6, HIGH);
+       digitalWrite(LED_7, HIGH);
+      Serial.println("LEDS ON");
+    }
+     if(incomingByte == 'd'){
+      digitalWrite(LED_1, LOW);
+      digitalWrite(LED_2, LOW);
+      digitalWrite(LED_3, LOW);
+      digitalWrite(LED_4, LOW);
+      digitalWrite(LED_5, LOW);
+      digitalWrite(LED_6, LOW);
+       digitalWrite(LED_7, LOW);
+      Serial.println("LEDS ON");
+     }
+  }
+}
