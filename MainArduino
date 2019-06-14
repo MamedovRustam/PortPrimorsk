@@ -17,7 +17,7 @@ void setup() {
   pinMode(LED_6, OUTPUT);
   pinMode(LED_7, OUTPUT);
   Serial.println("Press 1 to LED ON or 0 to LED OFF...");
-  digitalWrite(LED_1, LOW);
+  digitalWrite(LED_1, LOW);//использзуется в связи с установкой физических кнопок
   digitalWrite(LED_2, LOW);
   digitalWrite(LED_3, LOW);
   digitalWrite(LED_4, LOW);
