@@ -17,6 +17,14 @@ void setup() {
   pinMode(LED_6, OUTPUT);
   pinMode(LED_7, OUTPUT);
   Serial.println("Press 1 to LED ON or 0 to LED OFF...");
+  digitalWrite(LED_1, LOW);
+  digitalWrite(LED_2, LOW);
+  digitalWrite(LED_3, LOW);
+  digitalWrite(LED_4, LOW);
+  digitalWrite(LED_5, LOW);
+  digitalWrite(LED_6, LOW);
+  digitalWrite(LED_7, LOW);
+  
 }
  
 void loop() {
